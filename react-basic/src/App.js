@@ -1,22 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import MyHeader from "./MyHeader";
 
 function App() {
+  const style = {
+    App: {
+      backgroundColor: "black",
+    },
+    h2: {
+      color: "red",
+    },
+    bold_text: {
+      color: "green",
+    },
+  };
+
+  const number = 5;
+
   return (
-    <div className="App">
+    <div style={style.App} className="App">
+      <MyHeader />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h2 style={style.h2}>안녕 리액트!</h2>
+        <b style={style.bold_text} id="bold_text">
+          {number}는 : {number % 2 === 0 ? "짝수" : "홀수"}
+        </b>
       </header>
     </div>
   );
